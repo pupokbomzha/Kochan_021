@@ -39,9 +39,7 @@ node_t* prepend_list(list_t* const lst, int x); // Добавить элемен
 int pop_list(list_t * const lst);               // Извлечь первый элемент списка
 void print_list(const list_t * const lst);      // Вывести список
 void free_list(list_t * const lst);             // Удалить список
-void push(struct node* head, int data);         // Добавляет данные в список                          (from student)
-/*void push_test();                               // Тустирует push                                     (from student)
-*/
+
 int main(void)
 {
     /*
@@ -69,7 +67,6 @@ int main(void)
     pop_list(plist);
     // Забираем еще раз число из начала связного списка (это теперь 1)
     pop_list(plist);
-    push(NULL, 1);                                                                           //(from student)
     /*
      Снова выводим список.
      После 3-х извлечений должно быть 2 3 4 5 6 7 8 9
@@ -257,21 +254,4 @@ void free_list(list_t * const lst)
     }
     // Удаляем список (контейнер)
     free(lst);
-}
-
-/*
-Доп. функции для добавки данных в список и для проверки                                            (from student)
-*/
-void push(struct node* head, int data)
-{
-	struct node* newNode = (struct node*)malloc(sizeof(struct node)); //Ошибка была в неприведении типа указателя, который возвращает malloc()
-	newNode->data = data;
-	newNode->next = head;
-	head = newNode;
-}
-
-void push_test()
-{
-	newNode* head = build();      // вместо List -- newNode*
-	push(&head, 1);               // перед head -- & 
 }
