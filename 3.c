@@ -1,4 +1,7 @@
-struct matrix 
+#include <stdlib.h>
+#include <stdio.h>
+
+struct matrix
 {
 	float value_element;
 	int i;
